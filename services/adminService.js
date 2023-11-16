@@ -177,7 +177,7 @@ class AdminService {
 
   //* -----------------------------------| usersService |--
   async getAllSettings() {
-    return Setting.findAll({});
+    return await Setting.findAll({});
   }
 
   async updateSettings(updatedSettingData) {
