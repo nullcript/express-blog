@@ -8,7 +8,7 @@ node_modules/
 erd
 
 # IDE
-.idea
+.idea/
 
 # Redis
 .rdb
