@@ -1,0 +1,55 @@
+<!--Export Data Table Start-->
+<div class="col-12 mb-30">
+  <div class="box">
+    <div class="box-head d-flex flex-row">
+      <h4 class="title">آخرین مطالب منتشر شده</h4>
+      <a href="/admin/posts/create" class="mr-auto">
+        <button class="button button-primary">
+          <i class="zmdi zmdi-plus"></i><span>مطلب جدید</span>
+        </button>
+      </a>
+    </div>
+    <div class="box-body">
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>عنوان</th>
+              <th>نویسنده</th>
+              <th>دسته بندی مطلب</th>
+              <th>تعداد بازدید</th>
+              <th>وضعیت مطلب</th>
+              <th>تاریخ انتشار مطلب</th>
+              <th>تاریخ آپدیت مطلب</th>
+              <th>عملیات</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% allPosts.map((value,index)=>{ %>
+            <tr>
+              <th><%= index+1 %></th>
+              <td><%= value.title.slice(0,45) %></td>
+              <td><%= value.User.username %></td>
+              <td><%= value.Category.faName %></td>
+              <td><%= value.views %></td>
+              <td><%= value.status ? "منتشرشده":"پیش نویس" %></td>
+              <td style="direction: ltr"><%= value.jalaliCreatedAt %></td>
+              <td style="direction: ltr"><%= value.jalaliUpdatedAt %></td>
+              <td>
+                <a href="/admin/posts/edit/<%= value.id %>"
+                  ><i class="zmdi zmdi-edit zmdi-hc-fw fa-2x text-primary"></i
+                ></a>
+                <a href="/admin/posts/delete/<%= value.id %>"
+                  ><i class="zmdi zmdi-delete zmdi-hc-fw fa-2x text-danger"></i
+                ></a>
+              </td>
+            </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Export Data Table End-->

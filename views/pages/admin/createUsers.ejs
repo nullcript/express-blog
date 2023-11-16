@@ -1,0 +1,14 @@
+<!------------------ mainLayoutContent(body) ------------------>
+<%- contentFor("body") %>
+
+<!------------------ Error Notification Start ------------------>
+<%- include("../../partials/elements/errorNotif.ejs",{errors}) %>
+<!------------------ Error Notification End ------------------>
+
+<!------------------ Error Notification Start ------------------>
+<%- include("../../partials/elements/dbErrorNotif.ejs",{dbError}) %>
+<!------------------ Error Notification End ------------------>
+
+<!------------------ Row 1 Start ------------------>
+<div class="row"><%- include("../../partials/forms/createUserForm.ejs") %></div>
+<!------------------ Row 1 End ------------------>

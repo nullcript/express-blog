@@ -1,0 +1,12 @@
+<!------------------ dbError Notification Start ------------------>
+<% if(dbError.length > 0){ %>
+<div class="row">
+  <div class="alert alert-warning w-100 mb-5 mr-15 mt-5 ml-15" role="alert">
+    <strong> <%= dbError[0] %></strong>
+    <button class="close" data-dismiss="alert">
+      <i class="zmdi zmdi-close"></i>
+    </button>
+  </div>
+</div>
+<% } %>
+<!------------------ dbError Notification End ------------------>

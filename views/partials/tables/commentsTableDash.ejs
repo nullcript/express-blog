@@ -1,0 +1,40 @@
+<!--Export Data Table Start-->
+<div class="col-12 mb-30">
+  <div class="box">
+    <div class="box-head">
+      <h4 class="title">پنج دیدگاه آخر</h4>
+    </div>
+    <div class="box-body">
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>کاربر</th>
+              <th>دیدگاه</th>
+              <th>در پاسخ به</th>
+              <th>تاریخ ثبت نظر</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% last5Comments.map((value,index)=>{ %>
+            <tr>
+              <th><%= index+1 %></th>
+              <td class="d-flex">
+                <div class="avatar avatar-sm mb-10 ml-20">
+                  <img src="<%= gravatarUtil(value.User.email) %>" alt="" />
+                </div>
+                <span><%= value.User.username %></span>
+              </td>
+              <td><%= value.content.slice(0,35) %> ...</td>
+              <td><%= value.content.slice(0,35) %> ...</td>
+              <td style="direction: ltr"><%= value.jalaliCreatedAt %></td>
+            </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Export Data Table End-->

@@ -1,0 +1,20 @@
+<!------------------ mainLayoutContent(body) ------------------>
+<%- contentFor("body") %>
+
+<!------------------ Success Notification Start ------------------>
+<%- include("../../partials/elements/errorNotif.ejs",{ errors }) %>
+<!------------------ Success Notification End ------------------>
+
+<!------------------ Success Notification Start ------------------>
+<%- include("../../partials/elements/successNotif.ejs",{ success }) %>
+<!------------------ Success Notification End ------------------>
+
+<!------------------ dbError Notification Start ------------------>
+<%- include("../../partials/elements/dbErrorNotif.ejs",{ dbError }) %>
+<!------------------ dbError Notification End ------------------>
+
+<!------------------ Row 1 Start ------------------>
+<div class="row">
+  <%- include("../../partials/forms/settingsForm.ejs",{settings}) %>
+</div>
+<!------------------ Row 1 End ------------------>

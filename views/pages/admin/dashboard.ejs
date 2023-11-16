@@ -1,0 +1,44 @@
+<!------------------ mainLayoutContent(body) ------------------>
+<%- contentFor("body") %>
+<!------------------ Row 1 Start ------------------>
+
+<!------------------ Success Notification Start ------------------>
+<%- include("../../partials/elements/successNotif.ejs",{ success }) %>
+<!------------------ Success Notification End ------------------>
+
+<div class="row">
+  <%- include("../../partials/elements/topReport.ejs",{
+    reportName:"کاربران",
+    count : usersCount
+  }) %>
+  <%- include("../../partials/elements/topReport.ejs",{
+    reportName:"مطالب",
+    count : postsCount
+  }) %>
+  <%- include("../../partials/elements/topReport.ejs",{
+    reportName:"دیدگاه ها",
+    count : commentsCount
+  }) %>
+  <%- include("../../partials/elements/topReport.ejs",{
+    reportName:"کل بازدیدها",
+    count : viewsCount
+  }) %>
+</div>
+<!------------------ Row 1 End ------------------>
+<!------------------ Row 2 Start ------------------>
+<div class="row">
+  <%- include("../../partials/charts/barSimpleChart.ejs") %>
+  <%- include("../../partials/forms/fastPostForm.ejs") %>
+</div>
+<!------------------ Row 2 End ------------------>
+<!------------------ Row 3 Start ------------------>
+<div class="row">
+  <%- include("../../partials/tables/commentsTableDash.ejs", { last5Comments }) %>
+</div>
+<!------------------ Row 3 End ------------------>
+<!------------------ Inheritence(javascript) ------------------>
+<%- contentFor("javascript") %>
+<script src="/static/assets/js/plugins/echarts/echarts.min.js"></script>
+<script src="/static/assets/js/plugins/echarts/echarts.active.js"></script>
+
+

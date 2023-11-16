@@ -1,0 +1,15 @@
+<!------------------ Error Notification Start ------------------>
+<% if(errors.length > 0){ %>
+  <% errors.map((value,index)=>{%>
+    <div class="row">
+      <div class="alert alert-danger w-100 mb-5 mr-15 mt-5 ml-15" role="alert">
+        <strong>خطای <%= index+1 %> : </strong>
+        <%= value.msg %>
+        <button class="close" data-dismiss="alert">
+          <i class="zmdi zmdi-close"></i>
+        </button>
+      </div>
+    </div>
+    <% }) %>
+<% } %>
+<!------------------ Error Notification End ------------------>

@@ -1,0 +1,83 @@
+<!-- Fast Post Start-->
+<div class="col-12">
+  <div class="box">
+    <div class="box-head">
+      <h3 class="title">ایجاد مطلب جدید</h3>
+    </div>
+    <div class="box-body">
+      <div class="row mbn-20">
+        <!--Form Field-->
+        <form action="/admin/posts/store" method="POST">
+          <div class="row mbn-15">
+            <div class="col-lg-8 col-12 mb-15">
+              <!-- عنوان مطلب -->
+              <input
+                name="title"
+                type="text"
+                class="form-control"
+                placeholder="عنوان مطلب"
+              />
+            </div>
+            <div class="col-lg-8 col-12 mb-15">
+              <!-- نامک مطلب -->
+              <input
+                name="slug"
+                type="text"
+                class="form-control"
+                placeholder="نامک مطلب"
+              />
+            </div>
+            <div class="col-lg-8 col-12 mb-15">
+              <!-- متن مطلب -->
+              <textarea
+                name="content"
+                class="form-control"
+                placeholder="متن مطلب مورد نظر"
+              ></textarea>
+            </div>
+            <div class="col-lg-8 col-12 mb-15">
+              <!-- دسته بندی -->
+              <h6 class="mb-15 mr-10">دسته بندی مطلب</h6>
+              <select class="form-control" name="categoryId">
+                <% categories.map(value=>{ %>
+                  <option value="<%= value.id %>" %>>
+                    <%= value.faName %>
+                  </option>
+                <% }) %>
+              </select>
+            </div>
+            <div class="col-lg-8 col-12 mb-15">
+              <!-- نویسنده -->
+              <h6 class="mb-15 mr-10">نویسنده مطلب</h6>
+              <select class="form-control" name="userId">
+                <% users.map(value=>{ %>
+                  <option value="<%= value.id %>" %>>
+                    <%= value.username %>
+                  </option>
+                <% }) %>
+              </select>
+            </div>
+            <div class="col-lg-4 col-12 mb-20 mr-10">
+              <!-- وضعیت مطلب -->
+              <h6 class="mb-15">وضعیت مطلب</h6>
+              <label
+                ><input type="radio" name="status" value="0" checked />پیش
+                نویس</label
+              >
+              <label
+                ><input type="radio" name="status" value="1" />منتشر شده</label
+              >
+            </div>
+            <div class="col-lg-8 col-12 mb-40">
+              <button class="button button-google-maps">
+                <i class="zmdi zmdi-plus"></i><span>افزودن مطلب جدید</span>
+              </button>
+            </div>
+          </div>
+        </form>
+        <!--Form Field-->
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Fast Post End-->

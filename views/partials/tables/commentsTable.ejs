@@ -1,0 +1,55 @@
+<!--Export Data Table Start-->
+<div class="col-12 mb-30">
+  <div class="box">
+    <div class="box-head">
+      <h4 class="title">آخرین نظرات کاربران</h4>
+    </div>
+    <div class="box-body">
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>کاربر</th>
+              <th>دیدگاه</th>
+              <th>در پاسخ به</th>
+              <th>وضعیت دیدگاه</th>
+              <th>تاریخ ثبت نظر</th>
+              <th>عملیات</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% allComments.map((value,index)=>{ %>
+            <tr>
+              <th><%= index+1 %></th>
+              <td class="d-flex">
+                <div class="avatar avatar-sm mb-10 ml-20">
+                  <img src="<%= gravatarUtil(value.User.email) %>" alt="" />
+                </div>
+                <span><%= value.User.username %></span>
+              </td>
+              <td><%= value.content.slice(0,35) %> ...</td>
+              <td><%= value.Post.title.slice(0,35) %></td>
+              <td><%= value.status ? "تایید شده" : "در انتظار تایید" %></td>
+              <td style="direction: ltr"><%= value.jalaliCreatedAt %></td>
+              <td>
+                <a
+                  href="/admin/comments/approve/<%= value.id %>"
+                  class="<% if(value.status){ %> hidden <% } %>"
+                  ><i
+                    class="zmdi zmdi-check-square zmdi-hc-fw fa-2x text-success"
+                  ></i
+                ></a>
+                <a href="/admin/comments/reject/<%= value.id %>"
+                  ><i class="zmdi zmdi-delete zmdi-hc-fw fa-2x text-danger"></i
+                ></a>
+              </td>
+            </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Export Data Table End-->

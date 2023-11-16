@@ -1,0 +1,78 @@
+<!------------------ Error Notification Start ------------------>
+<%- include("../../partials/elements/successNotif.ejs",{success}) %>
+<!------------------ Error Notification End ------------------>
+
+<!------------------ Error Notification Start ------------------>
+<%- include("../../partials/elements/errorNotif.ejs",{errors}) %>
+<!------------------ Error Notification End ------------------>
+
+<!------------------ Error Notification Start ------------------>
+<%- include("../../partials/elements/dbErrorNotif.ejs",{dbError}) %>
+<!------------------ Error Notification End ------------------>
+
+<div class="row">
+  <div
+    class="d-flex align-self-center justify-content-center order-2 order-lg-1 col-lg-5 col-12"
+  >
+    <div class="login-register-form-wrap">
+      <div class="content">
+        <h1>ورود</h1>
+        <p>به صفحه ورود در وبلاگ ما خوش آمدید</p>
+      </div>
+
+      <div class="login-register-form">
+        <form action="/auth/login" method="POST">
+          <div class="row">
+            <div class="col-12 mb-20">
+              <input
+                name="email"
+                class="form-control"
+                type="text"
+                placeholder="ایمیل"
+              />
+            </div>
+            <div class="col-12 mb-20">
+              <input
+                name="password"
+                class="form-control"
+                type="password"
+                placeholder="رمز عبور"
+              />
+            </div>
+            <div class="col-12 mb-20">
+              <label for="remember" class="adomx-checkbox-2"
+                ><input name="remember" id="remember" type="checkbox" /><i
+                  class="icon"
+                ></i
+                >مرا به خاطر داشته باش.</label
+              >
+            </div>
+            <div class="col-12">
+              <div class="row justify-content-between">
+                <div class="col-auto mb-15">
+                  <a href="/auth/forgot">فراموشی رمز عبور؟</a>
+                </div>
+                <div class="col-auto mb-15">
+                  آیا حساب کاربری ندارید؟
+                  <a href="/auth/register">هم اکنون ایجاد کنید.</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 mt-10">
+              <button class="button button-primary button-outline">
+                داخل شوید
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="login-register-bg order-1 order-lg-2 col-lg-7 col-12">
+    <div class="content">
+      <h1>ورود</h1>
+      <p>به صفحه ورود در وبلاگ ما خوش آمدید</p>
+    </div>
+  </div>
+</div>

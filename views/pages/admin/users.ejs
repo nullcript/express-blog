@@ -1,0 +1,21 @@
+<!------------------ mainLayoutContent(body) ------------------>
+<%- contentFor("body") %>
+
+<!------------------ Success Notification Start ------------------>
+<%- include("../../partials/elements/successNotif.ejs",{ success }) %>
+<!------------------ Success Notification End ------------------>
+
+<!------------------ dbError Notification Start ------------------>
+<%- include("../../partials/elements/dbErrorNotif.ejs",{ dbError }) %>
+<!------------------ dbError Notification End ------------------>
+
+<!------------------ Row 1 Start ------------------>
+<div class="row">
+  <%- include("../../partials/tables/usersTable.ejs",{ allUsers }) %>
+</div>
+<!------------------ Row 1 End ------------------>
+
+<!------------------ Inheritence(javascript) ------------------>
+<%- contentFor("javascript") %>
+<script src="/static/assets/js/plugins/datatables/datatables.min.js"></script>
+<script src="/static/assets/js/plugins/datatables/datatables.active.js"></script>

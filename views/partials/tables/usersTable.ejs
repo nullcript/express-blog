@@ -1,0 +1,54 @@
+<!--Export Data Table Start-->
+<div class="col-12 mb-30">
+  <div class="box">
+    <div class="box-head d-flex flex-row">
+      <h4 class="title">لیست کاربران</h4>
+      <a href="/admin/users/create" class="mr-auto">
+        <button class="button button-primary">
+          <i class="zmdi zmdi-plus"></i><span>کاربر جدید</span>
+        </button>
+      </a>
+    </div>
+    <div class="box-body">
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>نام کاربری</th>
+              <th>ایمیل مربوطه</th>
+              <th>نقش کاربری</th>
+              <th>تاریخ عضویت</th>
+              <th>عملیات</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% allUsers.map((value,index)=>{ %>
+            <tr>
+              <th><%= index+1 %></th>
+              <td class="d-flex">
+                <div class="avatar avatar-sm mb-10 ml-20">
+                  <img src="<%= gravatarUtil(value.email) %>" alt="" />
+                </div>
+                <span><%= value.username %></span>
+              </td>
+              <td><%= value.email %></td>
+              <td><%= value.Role.faName %></td>
+              <td style="direction: ltr"><%= value.jalaliCreatedAt %></td>
+              <td>
+                <a href="/admin/users/edit/<%= value.id %>"
+                  ><i class="zmdi zmdi-edit zmdi-hc-fw fa-2x text-primary"></i
+                ></a>
+                <a href="/admin/users/delete/<%= value.id %>"
+                  ><i class="zmdi zmdi-delete zmdi-hc-fw fa-2x text-danger"></i
+                ></a>
+              </td>
+            </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Export Data Table End-->

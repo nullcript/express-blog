@@ -1,0 +1,71 @@
+<!-- Fast Post Start-->
+<div class="col-12">
+  <div class="box">
+    <div class="box-head">
+      <h3 class="title">ایجاد کاربر جدید</h3>
+    </div>
+    <div class="box-body">
+      <div class="row mbn-20">
+        <!--Form Field-->
+        <form action="/admin/users/store" method="POST">
+          <div class="row mbn-15">
+            <div class="col-lg-8 col-12 mb-15">
+              <!-- نام کاربری -->
+              <input
+                name="username"
+                type="text"
+                class="form-control"
+                placeholder="نام کاربری"
+              />
+            </div>
+            <div class="col-lg-8 col-12 mb-15">
+              <!-- ایمیل -->
+              <input
+                name="email"
+                type="text"
+                class="form-control"
+                placeholder="ایمیل"
+              />
+            </div>
+            <div class="col-lg-8 col-12 mb-15">
+              <!-- پسورد -->
+              <input
+                name="password"
+                type="password"
+                class="form-control"
+                placeholder="پسورد"
+              />
+            </div>
+            <div class="col-lg-8 col-12 mb-15">
+              <!-- تایید پسورد -->
+              <input
+                name="confirmPassword"
+                type="text"
+                class="form-control"
+                placeholder="تایید پسورد"
+              />
+            </div>
+            <div class="col-lg-4 col-12 mb-20 mr-10">
+              <!-- نقش کاربر -->
+              <h6 class="mb-15">نقش کاربر</h6>
+              <% roles.map(v=>{ %>
+              <label
+                ><input type="radio" name="roleId" value="<%= v.id %>" <%
+                if(v.enName==="subscriber"){ %>checked<% } %> /><%= v.faName
+                %></label
+              >
+              <% }) %>
+            </div>
+            <div class="col-lg-8 col-12 mb-40">
+              <button class="button button-google-maps">
+                <i class="zmdi zmdi-plus"></i><span>افزودن مطلب جدید</span>
+              </button>
+            </div>
+          </div>
+        </form>
+        <!--Form Field-->
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Fast Post End-->
